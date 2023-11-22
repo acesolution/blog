@@ -1,0 +1,202 @@
+{% load static %}
+<div class="navbar-area header-one" id="navbar">
+    <div class="header-top">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-6 col-5">
+                    <button class="subscribe-btn" data-bs-toggle="modal"
+                        data-bs-target="#newsletter-popup">Subscribe<i class="flaticon-right-arrow"></i></button>
+                </div>
+                <div class="col-lg-4 col-md-6 md-none">
+                    <a class="navbar-brand" href="index.html">
+                        <img class="logo-light" src="assets/img/logo-white.webp" alt="logo">
+                        <img class="logo-dark" src="assets/img/logo-white.webp" alt="logo">
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 col-7">
+                    <ul class="social-profile list-style">
+                        <li><a href="https://www.fb.com" target="_blank"><i class="ri-facebook-fill"></i></a></li>
+                        <li><a href="https://www.twitter.com" target="_blank"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li><a href="https://www.instagram.com" target="_blank"><i
+                                    class="ri-instagram-line"></i></a></li>
+                        <li><a href="https://www.linkedin.com" target="_blank"><i class="ri-linkedin-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg">
+            <a class="sidebar-toggler md-none" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button"
+                aria-controls="navbarOffcanvas">
+                <img src="assets/img/icons/menubar-white.svg" alt="Image">
+            </a>
+            <a class="navbar-brand d-lg-none" href="index.html">
+                <img class="logo-light" src="assets/img/logo-white.webp" alt="logo">
+                <img class="logo-dark" src="assets/img/logo-white.webp" alt="logo">
+            </a>
+            <button type="button" class="search-btn d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal">
+                <i class="flaticon-loupe"></i>
+            </button>
+            <a class="navbar-toggler" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button"
+                aria-controls="navbarOffcanvas">
+                <span class="burger-menu">
+                    <span class="top-bar"></span>
+                    <span class="middle-bar"></span>
+                    <span class="bottom-bar"></span>
+                </span>
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                      <a  class=" nav-link active">
+                        Home
+                      </a>
+                      
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a  class=" nav-link">
+                        Business
+                      </a>
+                      
+                    </li>
+                    <li class="nav-item">
+                      <a  class=" nav-link">
+                        Politics
+                      </a>
+                      
+                    </li>
+                    <li class="nav-item">
+                      <a  class=" nav-link">
+                        Video
+                      </a>
+                      
+                    </li>
+                    <li class="nav-item">
+                      <a  class=" nav-link">
+                        Sports
+                      </a>
+                      
+                    </li>
+                    <li class="nav-item">
+                      <a  class="nav-link ">
+                        Shop
+                      </a>
+                      
+                    </li>
+                  </ul>
+                <div class="others-option d-flex align-items-center">
+                    
+                    <div class="option-item">
+                        <button type="button" class="search-btn" data-bs-toggle="modal"
+                            data-bs-target="#searchModal">
+                            <i class="flaticon-loupe"></i>
+                        </button>
+                    </div>
+                    <div class="option-item">
+                        <a href="login.html" class="btn-two">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+<div class="responsive-navbar offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="navbarOffcanvas">
+    <div class="offcanvas-header">
+        <a href="index.html" class="logo d-inline-block">
+            <img class="logo-light" src="assets/img/logo.webp" alt="logo">
+            <img class="logo-dark" src="assets/img/logo-white.webp" alt="logo">
+        </a>
+        <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i class="ri-close-line"></i>
+        </button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav" >
+        <li class="nav-item">
+          <a  class="nav-link active">
+            Home
+          </a>
+          
+        </li>
+        <li class="nav-item">
+          <a  class=" nav-link">
+            Pages
+          </a>
+          
+        </li>
+        <li class="nav-item">
+          <a  class=" nav-link">
+            Business
+          </a>
+          
+        </li>
+        <li class="nav-item">
+          <a  class=" nav-link">
+            Politics
+          </a>
+          
+        </li>
+        <li class="nav-item">
+          <a  class=" nav-link">
+            Video
+          </a>
+          
+        </li>
+        <li class="nav-item">
+          <a  class=" nav-link">
+            Sports
+          </a>
+          
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link ">
+            Shop
+          </a>
+          
+        </li>
+      </ul>
+      <div class="offcanvas-contact-info">
+        <h4>Contact Info</h4>
+        <ul class="contact-info list-style">
+          <li>
+            <i class="ri-map-pin-fill"></i>
+            <p>28/A Street, New York, USA</p>
+          </li>
+          <li>
+            <i class="ri-mail-fill"></i>
+            <a href="/cdn-cgi/l/email-protection#3b535e5757547b595a435415585456"><span class="__cf_email__"
+                data-cfemail="cfa7aaa3a3a08fadaeb7a0e1aca0a2">[email&#160;protected]</span></a>
+          </li>
+          <li>
+            <i class="ri-phone-fill"></i>
+            <a href="tel:1800123456789">+1 800 123 456 789</a>
+          </li>
+        </ul>
+        <ul class="social-profile list-style">
+          <li>
+            <a href="https://www.fb.com" target="_blank"><i class="ri-facebook-fill"></i></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com" target="_blank"><i class="ri-instagram-line"></i></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com" target="_blank"><i class="ri-linkedin-fill"></i></a>
+          </li>
+          <li>
+            <a href="https://www.twitter.com" target="_blank"><i class="ri-twitter-fill"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="others-option d-flex d-lg-none align-items-center">
+        <div class="option-item">
+          <a href="login.html" class="btn-two">Sign In</a>
+        </div>
+      </div>
+    </div>
+</div>

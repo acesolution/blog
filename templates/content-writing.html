@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/remixicon.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/uicons-regular-rounded.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/flaticon_baxo.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/swiper.bundle.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/aos.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/header.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/footer.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/dark-theme.css' %}" />
+  <!-- Main Quill library -->
+  <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+  <!-- Theme included stylesheets -->
+  <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+
+
+
+  <title>Baxo - Responsive Blog HTML Template</title>
+  <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.webp' %}" />
+</head>
+
+<body>
+
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+  <div class="switch-theme-mode">
+    <label id="switch" class="switch">
+      <input type="checkbox" onchange="toggleTheme()" id="slider" />
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <!-- create_blog_post.html -->
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+      <div class="form-group">
+        <label for="{{ form.title.id_for_label }}">Title:</label>
+        {{ form.title }}
+      </div>
+    <div class="form-group">
+      <label for="{{ form.read_time.id_for_label }}">Read Time:</label>
+      {{ form.read_time }}
+    </div>
+    <div class="form-group">
+    <label for="{{ form.post_image.id_for_label }}">Post Image:</label>
+    {{ form.post_image }}
+    </div>
+    <div class="form-group">
+    <label for="{{ form.tags.id_for_label }}">Tags:</label>
+    {{ form.tags }}
+    </div>
+    <div class="form-group">
+    <label for="{{ form.category.id_for_label }}">Category:</label>
+    {{ form.category }}
+    </div>
+    
+
+    <!-- Include the Quill editor for the content field -->
+    <div id="editor"></div>
+
+    <!-- Initially hide the content textarea -->
+    <textarea name="{{ form.content.name }}" id="{{ form.content.id_for_label }}" rows="10"
+      style="display: none;"></textarea>
+
+    <!-- Place the submit button below the editor -->
+    <button type="submit">Submit</button>
+  </form>
+
+
+  <script>
+
+    var quill = new Quill('#editor', {
+      modules: {
+        toolbar: [
+          ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+          ['blockquote', 'code-block'],
+
+          [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+          [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+          [{ 'script': 'sub' }, { 'script': 'super' }],      // superscript/subscript
+          [{ 'indent': '-1' }, { 'indent': '+1' }],          // outdent/indent
+          [{ 'direction': 'rtl' }],                         // text direction
+
+          [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+          [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+          [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+          [{ 'font': [] }],
+          [{ 'align': [] }],
+
+          ['clean']                                         // remove formatting button
+        ],
+      },
+      theme: 'snow', // This is the default theme
+    });
+
+    // Listen for changes in the Quill editor and set the HTML content in a hidden input field
+    quill.on('text-change', function () {
+      var htmlContent = quill.root.innerHTML;
+      document.getElementById('id_content').value = htmlContent;
+    });
+
+
+  </script>
+
+  <script data-cfasync="false" src="{% static 'assets/js/email-decode.min.js' %}"></script>
+  <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/swiper.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/aos.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>
